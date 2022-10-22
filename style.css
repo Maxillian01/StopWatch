@@ -1,0 +1,36 @@
+/* to remove all padding and margin added immediately by the browser */
+* {   
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  
+}
+
+.main-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4d7af1;
+    height: 100vh;
+}
+
+.stopwatch-bg {
+    background-color: #fff;
+    height: 50%;
+    width: 53%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    border-radius: 5%;
+}
+
+.title {
+    margin-top: 2%;
+    color: red;
+    margin-bottom: 3%;
+    font-size: 75%;
+}
+
+.time-reader span {
+    
+}
