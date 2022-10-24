@@ -9,15 +9,31 @@ const resetBtn = document.querySelector(".reset-Btn")
 
 let milSecCount = 0;
 let secCount = 0;
+let minCount = 0;
+let hourCount = 0;
 let milSecInterval 
 let secInterval
+let hourInterval
+
+
 
 const startTimer = ()=>{
     secInterval = setInterval(()=>{
         secCount++
         seconds.textContent = secCount
 
+        if(minCount >= 59){
+            hourCount++;
+            hour.textContent = hourCount;
+            minCount = 0;
+        }
+
         if(secCount >= 60){
+            minCount++
+            minute.textContent = minCount
+            if(minCount <= 9){
+                minute.textContent = "0" + minCount
+            }
             secCount = 0;
         }
 
@@ -39,4 +55,4 @@ const startTimer = ()=>{
     }, 10)
 }
 
-// startTimer()
+    
