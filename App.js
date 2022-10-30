@@ -3,9 +3,9 @@ const seconds = document.querySelector(".seconds")
 const minute = document.querySelector(".min")
 const hour = document.querySelector(".hour")
 
-const pauseBtn = document.querySelector(".pause-Btn")
-const startBtn = document.querySelector(".start-Btn")
-const resetBtn = document.querySelector(".reset-Btn")
+const pauseBtn = document.querySelector(".pause-btn")
+const startBtn = document.querySelector(".start-btn")
+const resetBtn = document.querySelector(".reset-btn")
 
 let milSecCount = 0;
 let secCount = 0;
@@ -13,7 +13,6 @@ let minCount = 0;
 let hourCount = 0;
 let milSecInterval 
 let secInterval
-let hourInterval
 
 
 
@@ -22,7 +21,7 @@ const startTimer = ()=>{
         secCount++
         seconds.textContent = secCount
 
-        if(minCount >= 59){
+        if(minCount > 59){
             hourCount++;
             hour.textContent = hourCount;
             minCount = 0;
@@ -55,4 +54,31 @@ const startTimer = ()=>{
     }, 10)
 }
 
+startBtn.addEventListener('click', (event)=>{
+    event.preventDefault()
+    clearInterval(milSecInterval)
+    clearInterval(secInterval)
+    startTimer()
+})
+
+pauseBtn.addEventListener('click', (e)=>{
+    e.preventDefault()
+    clearInterval(milSecInterval)
+    clearInterval(secInterval)
+})
+
+resetBtn.addEventListener('click', (ev)=>{
+    ev.preventDefault()
+    clearInterval(milSecInterval)
+    clearInterval(secInterval)
+    milSecCount = 0;
+    secCount = 0;
+    minCount = 0;
+    hourCount = 0;
+    milSec.textContent='00';
+    seconds.textContent='00';
+    minute.textContent='00'
+    hour.textContent='00';
+
     
+})

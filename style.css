@@ -35,7 +35,7 @@
 .time-reader {
     font-size: 2.2rem;
     color: #4d7af1;
-    margin: 0.1% 3% 9% 3%;
+    margin:3% 3% 9% 3%;
     padding: 5% 3%;
     border-radius: 4%;
     box-shadow: #03b1a5 1px 1px 7px;
@@ -72,6 +72,12 @@
 
 .reset-btn {
     background-color: rgb(3, 172, 93);
+}
+
+.pause-btn:hover,
+.start-btn:hover,
+.reset-btn:hover {
+    cursor: pointer;
 }
 
 footer {
